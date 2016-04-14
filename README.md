@@ -1,2 +1,2 @@
 # Moon-Explorer
-Build GPS system for Moon using Googla Maps to locate Lunar vehicles and find location via latitude / longitude.
+GPS tracking application to locate Lunar vehicles on Moon using Google Maps.
