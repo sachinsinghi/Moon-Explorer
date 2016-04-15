@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Moon Explorer</title>
+    <link rel="stylesheet" type="text/css" href="./css/styles.css">
+</head>
+
+<body>
+    <!-- Action panel -->
+    <div id="view">
+        <fieldset>
+            <legend>Locate Vehicle</legend>
+            <select id="locateVehicle" onchange="m.locateVehicle()">
+                <option value="">Select Vehicle</option>
+                <option value="1">Vehicle 1</option>
+                <option value="2">Vehicle 2</option>
+                <option value="3">Vehicle 3</option>
+                <option value="4">Vehicle 4</option>
+                <option value="5">Vehicle 5</option>
+            </select>
+        </fieldset>
+        <fieldset>
+            <legend>Search Lat - Long</legend>
+            <label for="txtLat">Enter Latitude</label>
+            <input type="text" id="txtLat" placeholder="0.681400"></input>
+            <label for="txtLat">Enter Longitude</label>
+            <input type="text" id="txtLng" placeholder="23.460550"></input>
+            <div id="error"></div>
+            <button type="submit" onclick="m.locateLatLng()">Search</button>
+        </fieldset>
+    </div>
+    <!-- Render moon map -->
+    <div id="moon"></div>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/moonExplorer.js"></script>
+    <script>
+    if (moonLocator) {
+        var m = new moonLocator.Map({mapTypeControlOptions: {mapTypeIds: ['moon']}}, "moon", function() {
+            var appolloMarker = new google.maps.Marker({
+                position: new google.maps.LatLng(0.681400, 23.460550),
+                map: m.getMap(),
+                title: 'Apollo landing site!',
+                icon: './img/apollo.png',
+                center: {
+                    lat: 0.681400,
+                    lng: 23.460550
+                }
+            });
+        });
+    }
+    </script>
+</body>
+</html>
