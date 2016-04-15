@@ -6,3 +6,6 @@ Dependencies on following JS libraries:<br/>
 2.	lunarmaps_v1 (Google maps)<br/>
 
 Works well on IE10+, Chrome 45+, Firefox 45+
+
+#Demo link 
+http://www.theavani.com/moon-explorer/
